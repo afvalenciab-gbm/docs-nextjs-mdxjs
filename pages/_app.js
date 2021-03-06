@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import { MDXProvider } from '@mdx-js/react';
 
+import Layout from '../components/Layout';
 import CodeBlock from '../components/CodeBlock';
 
 const Wrapper = props => (
@@ -19,9 +20,11 @@ const components2 = {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <MDXProvider components={components2}>
-      <Component {...pageProps} />
-    </MDXProvider>
+    <Layout>
+      <MDXProvider components={components2}>
+        <Component {...pageProps} />
+      </MDXProvider>
+    </Layout>
   );
 }
 
